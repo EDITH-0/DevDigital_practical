@@ -95,6 +95,7 @@ function Dashboard() {
       method: 'POST',
       hasAuth: true,
       reqData: formData,
+      extraHeaders: { 'Content-Type': 'multipart/form-data' },
     })
     if (response.status === 200) {
       alertService.alert({

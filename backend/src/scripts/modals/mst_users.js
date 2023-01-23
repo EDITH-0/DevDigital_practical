@@ -2,7 +2,7 @@ import Sequelize from 'sequelize'
 import { DataTypes } from 'sequelize'
 import bcrypt from 'bcrypt'
 
-const sequelize = new Sequelize('my_new_db', 'root', 'password', {
+const sequelize = new Sequelize('my_new_db', 'root', 'Meet_9078', {
   host: 'localhost',
   dialect: 'mysql',
 })

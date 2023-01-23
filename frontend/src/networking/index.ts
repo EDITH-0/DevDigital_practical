@@ -1,14 +1,13 @@
 import axios from 'axios'
 import APICallData from './APICallData'
 
-
-
 interface APICallProp {
   endPoint: string
   method: 'POST' | 'GET'
   hasAuth?: boolean
   reqData?: any
   signal?: any
+  extraHeaders?: any
 }
 
 export default async function APICall({
@@ -17,6 +16,7 @@ export default async function APICall({
   hasAuth = true,
   reqData = null,
   signal = null,
+  extraHeaders,
 }: APICallProp) {
   try {
     const res = await axios(
@@ -26,6 +26,7 @@ export default async function APICall({
         hasAuth,
         reqData,
         signal,
+        extraHeaders,
       }),
     )
     return res

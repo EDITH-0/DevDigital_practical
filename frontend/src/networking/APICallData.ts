@@ -4,6 +4,7 @@ interface APICallProp {
   hasAuth?: boolean
   reqData?: any
   signal?: any
+  extraHeaders?: any
 }
 export default function APICallData({
   endPoint,
@@ -11,6 +12,7 @@ export default function APICallData({
   hasAuth,
   reqData = null,
   signal = null,
+  extraHeaders,
 }: APICallProp) {
   const token = localStorage.getItem('auth_token')
   const defaultHeader = signal
@@ -18,7 +20,7 @@ export default function APICallData({
         url: endPoint,
         method: method,
         headers: {
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
           Authorization: hasAuth
             ? token
               ? 'Bearer ' + token
@@ -27,17 +29,19 @@ export default function APICallData({
         },
         signal: signal.signal,
         data: reqData,
+        ...extraHeaders,
       }
     : {
         url: endPoint,
         method: method,
         headers: {
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
           Authorization: hasAuth
             ? token
               ? 'Bearer ' + token
               : undefined
             : undefined,
+          ...extraHeaders,
         },
         data: reqData,
       }
