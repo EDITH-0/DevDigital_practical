@@ -1,0 +1,47 @@
+.afi-input-file-container {
+  border: 2px dashed #cecece;
+  border-radius: 7px;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 7rem;
+  overflow: hidden;
+}
+.afi-input-file-container {
+  position: relative;
+}
+.afi-file-error {
+  border: 2px dashed red;
+}
+.afi-file-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0;
+}
+
+.afi-green-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: rgba(95, 183, 142, 1);
+  margin-bottom: 0;
+}
+.afi-black-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 0;
+}
+
+.afi-vldtnmsg-container {
+  display: flex !important;
+  flex-direction: column;
+  float: right;
+}
+
+.showImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
